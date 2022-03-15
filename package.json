@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc -p tsconfig.json",
-    "start": "tsc -p tsconfig.json && nodemon --inspect ./target/src/app.js",
-    "dev": "nodemon --watch './**/*.ts' --exec 'ts-node' src/app.ts"
+    "start": "node ./target/src/app.js",
+    "dev": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/app.ts",
+    "inspect": "nodemon --inspect src/app.ts"
   },
   "keywords": [],
   "author": "",
@@ -16,12 +17,14 @@
     "dotenv": "^16.0.0",
     "fastify": "^3.27.4",
     "fastify-swagger": "^5.0.0",
+    "i": "^0.3.7",
+    "npm": "^8.5.4",
     "pino-pretty": "^7.5.3",
-    "tsc": "^2.0.4",
     "typescript": "^4.6.2"
   },
   "devDependencies": {
     "@types/node": "^17.0.21",
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.15",
+    "ts-node": "^10.7.0"
   }
 }

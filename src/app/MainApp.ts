@@ -15,6 +15,7 @@ export default class MainApp {
      * Create options instance variable & init application configuration.
      */
     constructor() {
+
         this.options = {
             port: EnvService.get('APP_PORT', '8080'),
             host: EnvService.get('APP_HOST', 'localhost'),
@@ -76,6 +77,7 @@ export default class MainApp {
         // server
         this.server = await fastify({
             logger: {
+                file:'log.log',
                 prettyPrint:
                     process.env.NODE_ENV === 'development'
                         ? {
